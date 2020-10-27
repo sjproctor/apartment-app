@@ -14,4 +14,73 @@
  *= require_self
  */
 
-@import 'bootstrap'
+@import 'bootstrap';
+
+* {
+  color: #01161E;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #FFFAFA;
+}
+
+// ---FOOTER---
+.nav {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #598392;
+  padding: 5px;
+}
+
+a {
+  color: #01161E;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #EFF6E0;
+}
+
+// ---HEADER---
+#header {
+  margin-bottom: 20px;
+  background-color: #598392;
+}
+
+nav.navbar.navbar-light{
+  text-align: right;
+}
+
+li {
+  padding: 5px;
+}
+
+// ---HOME---
+img {
+  width: 100vw;
+}
+
+#home {
+  height: 100vh;
+  text-align: center;
+}
+
+// ---INDEX---
+#cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  background-color: #124559;
+}
+
+.btn-secondary:hover {
+  background-color: #598392;
+  color: #01161E;
+}

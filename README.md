@@ -100,8 +100,73 @@ export default App
 - Set mock data to state
 
 **Day 2**
+### Update Devise Routes
+- *index.html.erb*
+```
+<%= react_component("App", {
+  logged_in: user_signed_in?,
+  sign_in_route: new_user_session_path,
+  sign_up_route: new_user_registration_path,
+  sign_out_route: destroy_user_session_path,
+  current_user: current_user
+}) %>
+```
+- Add to destructuring in *App.js*
+
+
+### Add Page
+- MyApartments
 ### Footer
 - Checkout a new branch: footer
 - `console.log` all Devise routes
 - Take Footer content from Cat Tinder
-- Update routes to include sign in and sign up
+- Update routes to include sign in and sign up with conditional rendering
+
+### Color Palette
+- Rich Black FOGRA 29 #01161E
+- Midnight Green Eagle Green #124559
+- Teal Blue #598392
+- Cambridge Blue #AEC3B0
+- Beige #EFF6E0
+
+### Add Stylings
+- *app/assets/stylesheets/application.scss*
+```css
+.nav {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #708D81;
+  padding: 5px;
+}
+
+a {
+  color: #001427;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #F4D58D;
+}
+```
+
+### Index
+```
+<Route
+  path="/apartmentindex"
+  render={ (props) =>
+    <ApartmentIndex
+      apartments={ this.state.apartments }
+    />
+  }
+/>
+```
+
+### Favicon
+- Add image to *app/assets/images*
+- Add `<%= favicon_link_tag asset_path('house.png') %>` to the head tag in *app/views/layout/application.html.erb*
+
+### Custom Font
+- Add `<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">` to the head tag in *app/views/layout/application.html.erb*

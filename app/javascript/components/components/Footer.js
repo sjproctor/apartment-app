@@ -1,23 +1,40 @@
 import React, { Component } from 'react'
-import { Nav, NavItem, NavLink } from 'reactstrap'
+import { Nav, NavItem } from 'reactstrap'
 
 class Footer extends Component{
   render(){
+    const {
+      logged_in,
+      sign_in_route,
+      sign_up_route,
+      sign_out_route,
+      current_user
+    } = this.props
     return(
       <React.Fragment>
-        <div id="footer">
-          <Nav>
+        <Nav>
+          <NavItem>
+            <a className="links" href="/">Home</a>
+          </NavItem>
+          <NavItem>
+            <a href="/apartmentindex">All the Apartments</a>
+          </NavItem>
+          { logged_in &&
             <NavItem>
-              <NavLink href="/">Home</NavLink>
+              <a className="links" href={ sign_out_route }>Sign Out</a>
             </NavItem>
-            <NavItem>
-              <NavLink href="/catindex">All the Cats</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/catnew">Add a New Cat</NavLink>
-            </NavItem>
-          </Nav>
-        </div>
+          }
+          { !logged_in &&
+            <>
+              <NavItem>
+                <a href={ sign_in_route }>Sign In</a>
+              </NavItem>
+              <NavItem>
+                <a href={ sign_up_route }>Sign Up</a>
+              </NavItem>
+            </>
+          }
+        </Nav>
       </React.Fragment>
     )
   }
