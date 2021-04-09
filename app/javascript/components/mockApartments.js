@@ -4,39 +4,40 @@ let mockApts = [
     id: 1,
     street: "221B Baker St",
     city: "London",
-    state: "UK",
+    state: "Great Britain",
     manager: "Ms. Hudson",
     email: "ms-hud@uk.com",
     price: "1000",
     bedrooms: 2,
     bathrooms: 2,
-    pets: "no"
-
+    pets: "no",
+    user_id: 1
   },
   {
     id: 2,
-    street: "742 Evergreen Terrace",
-    city: "Springfield",
-    state: "Yes",
-    manager: "Homer",
-    email: "hs@dounut.com",
+    street: "8 Ocean Avenue",
+    city: "Coastal",
+    state: "New Jersey",
+    manager: "Mr. Fischoeder",
+    email: "wonderwharf@email.com",
     price: "500",
-    bedrooms: 3,
+    bedrooms: 4,
     bathrooms: 2,
-    pets: "yes"
-
+    pets: "yes",
+    user_id: 1
   },
   {
     id: 3,
-    street: "1640 Riverside Drive",
-    city: "Hill Valley",
-    state: "California",
-    manager: "Emmet Brown",
-    email: "julesfan@2015.com",
+    street: "90 Bedford St.",
+    city: "New York",
+    state: "NY",
+    manager: "Mr. Treeger",
+    email: "tinydancer@email.com",
     price: "2000",
-    bedrooms: 6,
-    bathrooms: 4,
-    pets: "yes"
+    bedrooms: 2,
+    bathrooms: 1,
+    pets: "yes",
+    user_id: 2
   }
 ]
 export default mockApts

@@ -1,62 +1,46 @@
-import React, { useState } from 'react'
-import {
-  Collapse,
-  Container,
-  Jumbotron,
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  Nav,
-  NavItem,
-  NavLink
-} from 'reactstrap'
+import React, { Component } from 'react'
+import { Nav, NavItem } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
+import apartmentIcon from '../assets/apartment-icon.png'
 
-const Header = (props) => {
-  const [collapsed, setCollapsed] = useState(true)
-  const toggleNavbar = () => setCollapsed(!collapsed)
-  const {
-    logged_in,
-    sign_in_route,
-    sign_up_route,
-    sign_out_route,
-    current_user
-  } = props
-  return(
-    <React.Fragment>
-      <div id="header">
-        <h1 className="display-3">Apartment App</h1>
-        <Navbar light>
-          <NavbarBrand href="/" className="mr-auto"></NavbarBrand>
-            <NavbarToggler onClick={ toggleNavbar } className="mr-2"/>
-            <Collapse isOpen={ !collapsed } navbar>
-              <Nav navbar>
+class Header extends Component {
+  render() {
+    const {
+      logged_in,
+      sign_in_route,
+      sign_out_route
+    } = this.props
+    return (
+      <div className="header-main">
+        <NavLink to="/"><img src={ apartmentIcon } alt="apartment app icon" className="icon" /></NavLink>
+        <Nav>
+          <NavItem>
+            <NavLink to="/">Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/apartment-index">All the Apartments</NavLink>
+          </NavItem>
+          { logged_in &&
+            <>
               <NavItem>
-                <a className="links" href="/">Home</a>
+                <NavLink to="/myapartments">My Apartments</NavLink>
               </NavItem>
               <NavItem>
-                <a href="/apartmentindex">All the Apartments</a>
+                <NavLink to="/new">Add Apartment</NavLink>
               </NavItem>
-              { logged_in &&
-                <NavItem>
-                  <a className="links" href={ sign_out_route }>Sign Out</a>
-                </NavItem>
-              }
-              { !logged_in &&
-                <>
-                  <NavItem>
-                    <a href={ sign_in_route }>Sign In</a>
-                  </NavItem>
-                  <NavItem>
-                    <a href={ sign_up_route }>Sign Up</a>
-                  </NavItem>
-                </>
-              }
-              </Nav>
-            </Collapse>
-        </Navbar>
+              <NavItem>
+                <a href={ sign_out_route }>Sign Out</a>
+              </NavItem>
+            </>
+          }
+          { !logged_in &&
+            <NavItem>
+              <a href={ sign_in_route }>Sign In</a>
+            </NavItem>
+          }
+        </Nav>
       </div>
-    </React.Fragment>
-  )
+    )
+  }
 }
-
 export default Header

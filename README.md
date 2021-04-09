@@ -116,57 +116,33 @@ export default App
 
 ### Add Page
 - MyApartments
-### Footer
-- Checkout a new branch: footer
-- `console.log` all Devise routes
-- Take Footer content from Cat Tinder
-- Update routes to include sign in and sign up with conditional rendering
 
 ### Color Palette
-- Rich Black FOGRA 29 #01161E
-- Midnight Green Eagle Green #124559
-- Teal Blue #598392
-- Cambridge Blue #AEC3B0
-- Beige #EFF6E0
+- `#eeebdd`
+- `#ce1212`
+- `#810000`
+- `#1b1717`
 
-### Add Stylings
-- *app/assets/stylesheets/application.scss*
-```css
-.nav {
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #708D81;
-  padding: 5px;
-}
-
-a {
-  color: #001427;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #F4D58D;
-}
-```
-
-### Index
-```
-<Route
-  path="/apartmentindex"
-  render={ (props) =>
-    <ApartmentIndex
-      apartments={ this.state.apartments }
-    />
-  }
-/>
-```
+### Adding Font Awesome Icons
+- yarn add @fortawesome/fontawesome-svg-core
+- yarn add @fortawesome/free-solid-svg-icons
+- yarn add @fortawesome/react-fontawesome
+- import { faHome, faCity } from "@fortawesome/free-solid-svg-icons";
+- import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+- <FontAwesomeIcon icon={ faHome } />
+- <FontAwesomeIcon icon={ faCity } />
 
 ### Favicon
 - Add image to *app/assets/images*
 - Add `<%= favicon_link_tag asset_path('house.png') %>` to the head tag in *app/views/layout/application.html.erb*
 
 ### Custom Font
-- Add `<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">` to the head tag in *app/views/layout/application.html.erb*
+- Add `@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');` to the stylesheet
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+```

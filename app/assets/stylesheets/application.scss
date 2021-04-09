@@ -1,86 +1,111 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
 @import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 * {
-  color: #01161E;
-  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-body {
-  background-color: #FFFAFA;
-}
-
-// ---FOOTER---
-.nav {
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #598392;
-  padding: 5px;
-}
-
-a {
-  color: #01161E;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #EFF6E0;
-}
-
-// ---HEADER---
-#header {
-  margin-bottom: 20px;
-  background-color: #598392;
-}
-
-nav.navbar.navbar-light{
-  text-align: right;
-}
-
-li {
-  padding: 5px;
-}
-
-// ---HOME---
-img {
-  width: 100vw;
-}
-
-#home {
-  height: 100vh;
+h3 {
   text-align: center;
+  padding: 20px;
 }
 
-// ---INDEX---
-#cards {
+.button {
+  background-color: #810000;
+  margin: 5px;
+
+}
+
+// --HEADER--
+.header-main {
+  height: 100px;
+  background-color: #EEEBDD;
+}
+.icon {
+  height: 100px;
+  padding: 5px;
+}
+.nav {
+  margin-top: 65px;
+  float: right;
+}
+a {
+  padding: 15px;
+  color: #1B1717;
+  font-weight: bold;
+}
+a:hover {
+  color: #1B1717;
+}
+
+// --HOME--
+.apartment-background {
+  width: 100vw;
+  position: fixed;
+  opacity: .7;
+}
+
+// --INDEX--
+.cards.row {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  margin: 10px;
+}
+.card.card-body {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 12px 22px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-align: center;
+}
+p.card-button {
+  margin-top: 40px;
+}
+.fa-icon {
+  margin-right: 10px;
+}
+.col-sm-4 {
+  margin-bottom: 50px;
 }
 
-.btn-secondary {
-  background-color: #124559;
+// --SHOW--
+.show-card-container {
+  display: flex;
+  justify-content: center;
+}
+.show-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 12px 22px 0 rgba(0, 0, 0, 0.19);
+  width: 80%;
+  padding: 60px;
 }
 
-.btn-secondary:hover {
-  background-color: #598392;
-  color: #01161E;
+// --NEW--
+.form-container {
+  margin: 100px;
+}
+
+// --PROTECTED INDEX--
+.my-show-card{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 12px 22px 0 rgba(0, 0, 0, 0.19);
+  padding: 40px;
+}
+.my-card-button {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width:500px) {
+  .nav {
+    margin-top: 0px;
+    float: right;
+  }
 }
